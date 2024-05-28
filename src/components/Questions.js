@@ -1,10 +1,17 @@
+import NextButton from "./NextButton";
 import Options from "./Options";
 
-function Questions({ question }) {
+function Questions({ question, answer, dispatch, index, numLength }) {
   return (
     <div className="">
       <h4>{question.question}</h4>
-      <Options options={question.options} />
+      <Options question={question} answer={answer} dispatch={dispatch} />
+      <NextButton
+        dispatch={dispatch}
+        answer={answer}
+        index={index}
+        numLength={numLength}
+      />
     </div>
   );
 }
