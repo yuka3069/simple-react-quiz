@@ -70,7 +70,9 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch("http://localhost:8888/questions");
+        const res = await fetch(
+          "https://react-quiz-three-ebon.vercel.app/questions"
+        );
         const data = await res.json();
         dispatch({ type: "dataReceived", payload: data });
         console.log(data);
